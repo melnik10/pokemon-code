@@ -2,6 +2,7 @@ import './App.css';
 import LoginContainer from "./components/auth/Login/LoginContainer";
 import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import {connect} from "react-redux";
+import MainWindow from "./components/mainWindow/MainWindow";
 
 const getObjectProperty = (obj, path, defaultValue = undefined) => {
     const arrPath = path.toString().split('.')
@@ -46,7 +47,7 @@ const App = (props) => {
                   <Route path='/login' render={() =>
                     props.isConfirm ? <Redirect to={'/app'}/> : <LoginContainer isConfirm={props.isConfirm}
                                                                                 isAuth={props.isAuth}/>}/>
-                  <Route path='/app' render={() => props.isConfirm ? <div>APP</div> : <Redirect to={'/login'}/>}/>
+                  <Route path='/app' render={() => props.isConfirm ? <MainWindow/> : <Redirect to={'/login'}/>}/>
                   <Route path='*' render={() => <div>404 not found</div>}/>
               </Switch>
           </BrowserRouter>

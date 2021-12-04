@@ -1,0 +1,29 @@
+.mainWindowWrapper {
+    display: grid;
+    width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+                    "header header"
+                    "sidebar content";
+}
+
+.header {
+    grid-area: header;
+    background-color: green;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #61dafb;
+}
+
+.content {
+    grid-area: content;
+    max-width: 1100px;
+    background-color: cadetblue;
+    word-wrap:break-word;
+
+
+}
