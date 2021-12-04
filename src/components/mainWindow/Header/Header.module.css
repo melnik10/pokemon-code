@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: right;
+    height: 100%;
+}
+.logoutButton {
+    box-sizing: border-box;
+    height: 50%;
+    max-width: 100px;
+    border: 1px solid black;
+    margin: 15px;
+    padding: 5px;
+}
+.backButton {
+    display: none;
+    border: 1px solid black;
+}
