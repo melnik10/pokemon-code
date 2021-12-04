@@ -1,8 +1,7 @@
 import './App.css';
-import LoginContainer from "./components/auth/LoginContainer";
+import LoginContainer from "./components/auth/Login/LoginContainer";
 import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import {connect} from "react-redux";
-import {setAuthUserAC} from "./redux/reducers/auth_reducer";
 
 const getObjectProperty = (obj, path, defaultValue = undefined) => {
     const arrPath = path.toString().split('.')
@@ -38,16 +37,16 @@ getObjectProperty(obj, "pupa.ne.tuda", "Default value"); // > 'Default value'
 getObjectProperty(obj, 123, "Default value"); // > 'Default value'
 
 const App = (props) => {
-    debugger;
     return (
       <div className="App">
           <BrowserRouter>
               <Switch>
                   <Route exact path='/' render={() =>
-                    props.isAuth ? <Redirect to={'/app'}/> : <Redirect to={'/login'}/>}/>
+                    props.isConfirm ? <Redirect to={'/app'}/> : <Redirect to={'/login'}/>}/>
                   <Route path='/login' render={() =>
-                    props.isAuth ? <Redirect to={'/app'}/> : <LoginContainer setAuthUser={props.setAuthUser}/>}/>
-                  <Route path='/app' render={() => <div>APP</div>}/>
+                    props.isConfirm ? <Redirect to={'/app'}/> : <LoginContainer isConfirm={props.isConfirm}
+                                                                                isAuth={props.isAuth}/>}/>
+                  <Route path='/app' render={() => props.isConfirm ? <div>APP</div> : <Redirect to={'/login'}/>}/>
                   <Route path='*' render={() => <div>404 not found</div>}/>
               </Switch>
           </BrowserRouter>
@@ -58,11 +57,8 @@ const App = (props) => {
 const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
+        isConfirm: state.auth.isConfirm
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setAuthUser: () => dispatch(setAuthUserAC()),
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default connect(mapStateToProps, {})(App);

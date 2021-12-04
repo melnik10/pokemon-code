@@ -7,7 +7,7 @@ export const LoginForm = (props) => {
         <form onSubmit={props.handleSubmit}>
             <div><Field name='login' component='input' type='text' /></div>
             <div><Field name='password' component='input' type='password' /></div>
-            <button>Submit</button>
+            <button type={'submit'}>Submit</button>
         </form>
       </div>
     )
