@@ -3,8 +3,7 @@ import {pokemonAPI} from "../../api/api";
 const GET_POKEMON_TYPES = 'pokemon/GET_POKEMON_TYPES'
 const GET_POKEMON_SUBTYPES = 'pokemon/GET_POKEMON_SUBTYPES'
 const GET_POKEMON_CARDS = 'pokemon/GET_POKEMON_CARDS'
-
-
+const GET_POKEMON_SELECTED_CARD = 'pokemon/GET_POKEMON_SELECTED_CARD'
 
 const initialState = {
 
@@ -28,6 +27,11 @@ const pokemonReducer = (state = initialState, action) => {
                 ...state,
                 cards: action.payload.cards,
             }
+        case GET_POKEMON_SELECTED_CARD:
+            return {
+                ...state,
+                selectedCard: action.payload.selectedCard
+            }
         default:
             return state
     }
@@ -38,6 +42,15 @@ export const getPokemonCards = (cards) => {
         type: GET_POKEMON_CARDS,
         payload: {
             cards
+        }
+    }
+}
+export const getPokemonSelectedCard = (card) => {
+    debugger;
+    return {
+        type: GET_POKEMON_SELECTED_CARD,
+        payload: {
+            selectedCard: card
         }
     }
 }
@@ -82,5 +95,12 @@ export const getPokemonCardsTC = (queryCard) => async (dispatch) => {
         dispatch(getPokemonCards(response.data.data))
     }
 }
+
+// export const getPokemonSelectedCardTC = (idCard) => async (dispatch) => {
+//     const response = await pokemonAPI.getCard(idCard)
+//     if(response.status === 200) {
+//         dispatch(getPokemonSelectedCard(response.data.data))
+//     }
+// }
 
 export default pokemonReducer;

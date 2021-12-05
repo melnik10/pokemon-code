@@ -10,7 +10,7 @@ const SelectForm = (props) => {
           <form>
               <label>Types:
                   <div><Field name={'types'} component={'select'} onChange={props.handleChange}>
-                      {props.types ? props.types.map((value, index) => <option defaultValue={value} key={index}>{value}</option>) : ''}
+                      {props.types ? props.types.map((value, index) => <option  defaultValue={value} key={index}>{value}</option>) : ''}
                   </Field></div>
               </label>
               <label>Subtypes:

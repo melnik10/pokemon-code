@@ -37,6 +37,8 @@ const setInitializedSuccessAC = () => {
 //           dispatch(setInitializedSuccessAC())
 //       })
 // }
+
+
 export const setInitializedSuccess = () => (dispatch) => {
     const types = dispatch(getPokemonTypesTC())
     const subtypes = dispatch(getPokemonSubtypesTC())
@@ -44,8 +46,8 @@ export const setInitializedSuccess = () => (dispatch) => {
     Promise.all([types, subtypes])
       .then(() => {
           dispatch(setInitializedSuccessAC())
-      }, (reslove) => {
-          alert(reslove)
+      }, resolve => {
+          alert(resolve)
           delete localStorage.isConfirm
       })
 }

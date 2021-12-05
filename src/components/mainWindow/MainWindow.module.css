@@ -1,6 +1,7 @@
 .mainWindowWrapper {
     display: grid;
     width: 1200px;
+    min-height: 600px;
     margin: 0 auto;
     grid-template-columns: 200px 1fr;
     grid-template-rows: 60px 1fr;
@@ -21,7 +22,12 @@
 
 .content {
     grid-area: content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 1100px;
+
     background-color: cadetblue;
     word-wrap:break-word;
 

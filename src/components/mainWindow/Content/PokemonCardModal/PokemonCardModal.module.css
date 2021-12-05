@@ -1,0 +1,50 @@
+.pokemonCardModal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+
+.pokemonCardModal.active {
+    transform: scale(1);
+}
+
+.pokemonCardModal__content {
+    background-color: white;
+    color: black;
+    height: 90vh;
+    width: 80vw;
+    border-radius: 20px;
+}
+
+.selectedCard {
+    display: flex;
+}
+.image {
+    flex: 1 1 70%;
+}
+.image img {
+    overflow: hidden;
+    height: 50vh;
+}
+
+.pokemonInfo {
+    margin: 20px;
+    border-bottom: 1px solid gray;
+}
+.pokemonSkills {
+
+}
+
+.description {
+    margin-top: 20px;
+    padding-left: 15px;
+    text-align: left;
+}

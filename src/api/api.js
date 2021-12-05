@@ -13,6 +13,9 @@ export const pokemonAPI = {
     },
     getCards(queryCard) {
         return instance.get(`/cards?q=${queryCard}`)  ///cards?pageSize=4&page=1
+    },
+    getCard(idCard) {
+        return instance.get(`/cards/${idCard}`)  ///cards?pageSize=4&page=1
     }
 }
 
