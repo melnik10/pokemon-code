@@ -1,6 +1,7 @@
 const SET_AUTH_USER = 'auth/SET_AUTH_USER'
 const SET_CONFIRM_USER = 'auth/SET_CONFIRM_USER'
 const SET_CONFIRM_CODE = 'auth/SET_CONFIRM_CODE'
+const LOGOUT = 'auth/LOGOUT'
 
 const initialState = {
     isAuth: false,
@@ -27,6 +28,13 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 confirmCode: action.payload.confirmCode
             }
+        case LOGOUT:
+            return {
+                ...state,
+                isAuth: false,
+                isConfirm: false,
+                confirmCode: null,
+            }
         default:
             return state
     }
@@ -52,6 +60,13 @@ export const setConfirmCode = (confirmCode) => {
             confirmCode
         }
     }
+}
+
+export const logout = () => {
+    return {
+        type: LOGOUT
+    }
+
 }
 
 export default authReducer;

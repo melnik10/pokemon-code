@@ -5,11 +5,16 @@
 }
 .logoutButton {
     box-sizing: border-box;
+    cursor: pointer;
     height: 50%;
     max-width: 100px;
     border: 1px solid black;
     margin: 15px;
     padding: 5px;
+    transition: all 0.5s ease;
+}
+.logoutButton:hover {
+    background-color: rgba(100,100,100,0.5);
 }
 .backButton {
     display: none;

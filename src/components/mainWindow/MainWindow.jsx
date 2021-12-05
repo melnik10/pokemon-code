@@ -7,6 +7,7 @@ import {connect} from "react-redux";
 import {setInitializedSuccess} from "../../redux/reducers/mainWindow_reducer";
 import PokemonCardModal from "./Content/PokemonCardModal/PokemonCardModal";
 import {getPokemonSelectedCard} from "../../redux/reducers/pokemon_reducer";
+import {logout} from "../../redux/reducers/auth_reducer";
 
 const MainWindow = (props) => {
     debugger;
@@ -22,7 +23,7 @@ const MainWindow = (props) => {
     return (
 
       <div className={style.mainWindowWrapper}>
-          <div className={style.header}><Header/></div>
+          <div className={style.header}><Header logout={props.logout}/></div>
           <div className={style.sidebar}><Sidebar/></div>
           <div className={style.content}><PokemonCards types={props.types}
                                                        getCard={props.getPokemonSelectedCard}
@@ -43,4 +44,4 @@ const mapStateToProps = (state) => {
 
     }
 }
-export default connect(mapStateToProps, {setInitializedSuccess, getPokemonSelectedCard})(MainWindow)
+export default connect(mapStateToProps, {logout, setInitializedSuccess, getPokemonSelectedCard})(MainWindow)

@@ -2,7 +2,13 @@ import React from 'react'
 import LoginForm from "./LoginForm";
 import ConfirmForm from "./ConfirmForm";
 import {connect} from "react-redux";
-import {generateConfirmCode, setAuthUser, setConfirmCode, setConfirmUser} from "../../../redux/reducers/auth_reducer";
+import {
+    generateConfirmCode,
+    logout,
+    setAuthUser,
+    setConfirmCode,
+    setConfirmUser
+} from "../../../redux/reducers/auth_reducer";
 
 export const LoginContainer = (props) => {
     const getRandomCode = (min, max) => {
@@ -43,8 +49,9 @@ export const LoginContainer = (props) => {
 const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
+        isConfirm: state.auth.isConfirm,
         confirmCode: state.auth.confirmCode,
     }
 }
 
-export default connect(mapStateToProps, {setConfirmCode, setConfirmUser, setAuthUser})(LoginContainer)
+export default connect(mapStateToProps, {logout, setConfirmCode, setConfirmUser, setAuthUser})(LoginContainer)
