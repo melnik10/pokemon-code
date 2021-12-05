@@ -11,13 +11,14 @@ const PokemonCards = (props) => {
           </div>
         )
     }
+    debugger;
     return (
       <div className={style.pokemonCards}>
-          {props.cards ? props.cards.map((card) => <PokemonItem
+          {props.cards.length ? props.cards.map((card) => <PokemonItem
             name={card.name}
             artist={card.artist}
             image={card.images.large}
-            key={card.id}/>) : ''}
+            key={card.id}/>) : <div>Таких покемонов не существует...</div>}
       </div>
     )
 }

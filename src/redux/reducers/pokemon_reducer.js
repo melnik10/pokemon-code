@@ -58,21 +58,29 @@ export const getPokemonSubtypes = (subtypes) => {
     }
 }
 
+
 export const getPokemonTypesTC = () => async (dispatch) => {
+    debugger;
     const response = await pokemonAPI.getTypes()
-    dispatch(getPokemonTypes(response.data))
-    return response.data
+    if(response.status === 200) {
+        dispatch(getPokemonTypes(response.data.data))
+        return response.data.data
+    }
 }
 
 export const getPokemonSubtypesTC = () => async (dispatch) => {
     const response = await pokemonAPI.getSubtypes()
-    dispatch(getPokemonSubtypes(response.data))
-    return response.data
+    if(response.status === 200) {
+        dispatch(getPokemonSubtypes(response.data.data))
+        return response.data.data
+    }
 }
 
 export const getPokemonCardsTC = (queryCard) => async (dispatch) => {
     const response = await pokemonAPI.getCards(queryCard)
-    dispatch(getPokemonCards(response.data))
+    if(response.status === 200) {
+        dispatch(getPokemonCards(response.data.data))
+    }
 }
 
 export default pokemonReducer;

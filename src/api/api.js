@@ -7,15 +7,12 @@ const instance = axios.create({
 export const pokemonAPI = {
     getTypes() {
         return instance.get('/types')
-          .then(r => r.data)
     },
     getSubtypes() {
         return instance.get('/subtypes')
-          .then(r => r.data)
     },
     getCards(queryCard) {
         return instance.get(`/cards?q=${queryCard}`)  ///cards?pageSize=4&page=1
-          .then(r => r.data)
     }
 }
 

@@ -42,16 +42,13 @@ export const setInitializedSuccess = () => (dispatch) => {
     const subtypes = dispatch(getPokemonSubtypesTC())
 
     Promise.all([types, subtypes])
-      .then(([types, subtypes]) => {
-          let queryCards = `types:${types[0]} subtypes:${subtypes[0]}`
-          const cards = dispatch(getPokemonCardsTC(queryCards))
-
-      })
       .then(() => {
           dispatch(setInitializedSuccessAC())
+      }, (reslove) => {
+          alert(reslove)
+          delete localStorage.isConfirm
       })
 }
-
 
 
 export default mainWindowReducer;
