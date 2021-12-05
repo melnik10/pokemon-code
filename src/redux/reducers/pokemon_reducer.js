@@ -7,30 +7,26 @@ const GET_POKEMON_CARDS = 'pokemon/GET_POKEMON_CARDS'
 
 
 const initialState = {
-    counter: 0,
+
 }
 
 const pokemonReducer = (state = initialState, action) => {
-    debugger;
     switch (action.type) {
         case GET_POKEMON_TYPES:
             return {
                 ...state,
                 types: action.payload.types,
-                counter: ++state.counter,
             }
         case GET_POKEMON_SUBTYPES:
             return {
                 ...state,
                 subtypes: action.payload.subtypes,
-                counter: ++state.counter,
 
             }
         case GET_POKEMON_CARDS:
             return {
                 ...state,
                 cards: action.payload.cards,
-                counter: ++state.counter,
             }
         default:
             return state
@@ -65,15 +61,17 @@ export const getPokemonSubtypes = (subtypes) => {
 export const getPokemonTypesTC = () => async (dispatch) => {
     const response = await pokemonAPI.getTypes()
     dispatch(getPokemonTypes(response.data))
+    return response.data
 }
 
 export const getPokemonSubtypesTC = () => async (dispatch) => {
     const response = await pokemonAPI.getSubtypes()
     dispatch(getPokemonSubtypes(response.data))
+    return response.data
 }
 
-export const getPokemonCardsTC = () => async (dispatch) => {
-    const response = await pokemonAPI.getCards()
+export const getPokemonCardsTC = (queryCard) => async (dispatch) => {
+    const response = await pokemonAPI.getCards(queryCard)
     dispatch(getPokemonCards(response.data))
 }
 

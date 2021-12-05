@@ -3,7 +3,6 @@ import {reduxForm} from "redux-form";
 
 
 const SelectForm = (props) => {
-    debugger;
     return (
       <div>
           <form>

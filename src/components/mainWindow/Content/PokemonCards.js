@@ -22,10 +22,6 @@ const PokemonCards = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        cards: state.pokemon.cards
-    }
-}
 
-export default connect(mapStateToProps, {})(PokemonCards)
+
+export default PokemonCards

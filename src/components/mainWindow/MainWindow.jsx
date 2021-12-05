@@ -7,10 +7,10 @@ import {connect} from "react-redux";
 import {setInitializedSuccess} from "../../redux/reducers/mainWindow_reducer";
 
 const MainWindow = (props) => {
+    debugger;
     useEffect(() => {
         props.setInitializedSuccess()
     }, [])
-    debugger;
     if(!props.initialized) {
         return (
           <div>Loading...</div>
@@ -20,7 +20,9 @@ const MainWindow = (props) => {
       <div className={style.mainWindowWrapper}>
           <div className={style.header}><Header/></div>
           <div className={style.sidebar}><Sidebar/></div>
-          <div className={style.content}><PokemonCards/></div>
+          <div className={style.content}><PokemonCards types={props.types}
+                                                       cards={props.cards}
+                                                       subtypes={props.subtypes}/></div>
       </div>
     )
 }

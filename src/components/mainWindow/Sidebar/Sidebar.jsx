@@ -4,7 +4,6 @@ import SelectForm from "./SelectForm";
 import {connect} from "react-redux";
 
 const Sidebar = (props) => {
-    debugger;
     return (
       <div className={style.sidebar}>
           <SelectForm types={props.types} selectType={'types'}/>

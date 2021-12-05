@@ -27,17 +27,31 @@ const setInitializedSuccessAC = () => {
     }
 }
 
-export const setInitializedSuccess = () => async (dispatch) => {
-    const types = await dispatch(getPokemonTypesTC())
-    const subtypes = await dispatch(getPokemonSubtypesTC())
-    const cards = await dispatch(getPokemonCardsTC())
+// export const setInitializedSuccess = () => async (dispatch) => {
+//     const types = await dispatch(getPokemonTypesTC())
+//     const subtypes = await dispatch(getPokemonSubtypesTC())
+//     let queryCards = `types:${types[0]} subtypes:${subtypes[0]}`
+//     const cards = dispatch(getPokemonCardsTC(queryCards))
+//     Promise.all([types, subtypes, cards])
+//       .then(() => {
+//           dispatch(setInitializedSuccessAC())
+//       })
+// }
+export const setInitializedSuccess = () => (dispatch) => {
+    const types = dispatch(getPokemonTypesTC())
+    const subtypes = dispatch(getPokemonSubtypesTC())
 
-    Promise.all([types, subtypes, cards])
+    Promise.all([types, subtypes])
+      .then(([types, subtypes]) => {
+          let queryCards = `types:${types[0]} subtypes:${subtypes[0]}`
+          const cards = dispatch(getPokemonCardsTC(queryCards))
+
+      })
       .then(() => {
-          debugger;
           dispatch(setInitializedSuccessAC())
       })
 }
+
 
 
 export default mainWindowReducer;
