@@ -1,0 +1,9 @@
+.pokemonCards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.pokemonItem {
+    flex: 1 1 200px;
+}

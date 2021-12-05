@@ -12,6 +12,10 @@ export const pokemonAPI = {
     getSubtypes() {
         return instance.get('/subtypes')
           .then(r => r.data)
+    },
+    getCards() {
+        return instance.get('/cards?pageSize=4&page=1')
+          .then(r => r.data)
     }
 }
 
