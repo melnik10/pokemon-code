@@ -9,11 +9,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
 }
 
 .pokemonCardModal.active {
-    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
 }
 
 .pokemonCardModal__content {
@@ -22,6 +25,12 @@
     height: 90vh;
     width: 80vw;
     border-radius: 20px;
+    transform: scale(0.5);
+    transition: 0.3s all;
+}
+
+.pokemonCardModal__content.active {
+    transform: scale(1);
 }
 
 .selectedCard {

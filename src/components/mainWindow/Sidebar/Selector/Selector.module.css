@@ -1,0 +1,14 @@
+.selectorChild {
+    border: 1px solid gray;
+    padding: 5px 10px;
+    margin-bottom: 1px;
+}
+
+.hide {
+    display: none;
+}
+.nohide {
+    display: block;
+    max-height: 250px;
+    overflow: auto;
+}

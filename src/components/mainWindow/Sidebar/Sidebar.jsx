@@ -3,6 +3,7 @@ import style from './Sidebar.module.css'
 import SelectForm from "./SelectForm";
 import {connect} from "react-redux";
 import {getPokemonCardsTC} from "../../../redux/reducers/pokemon_reducer";
+import Selector from "./Selector/Selector";
 
 const Sidebar = (props) => {
     const onChangeSelect = (data) => {
@@ -11,7 +12,8 @@ const Sidebar = (props) => {
     }
     return (
       <div className={style.sidebar}>
-          <SelectForm  initialValues={{types: props.types[0], subtypes: props.subtypes[0]}} {...props} onChange={onChangeSelect}/>
+          {/*<SelectForm  initialValues={{types: props.types[0], subtypes: props.subtypes[0]}} {...props} onChange={onChangeSelect}/>*/}
+          <Selector {...props}/>
       </div>
     )
 }

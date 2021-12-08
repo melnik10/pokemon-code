@@ -6,7 +6,7 @@ const PokemonCardModal = ({active, setActive, selectedCard}) => {
     return (
       <div onClick={() => setActive(false)}
            className={active ? `${style.pokemonCardModal} ${style.active}` : style.pokemonCardModal}>
-          <div onClick={(event) => event.stopPropagation()} className={style.pokemonCardModal__content}>
+          <div onClick={(event) => event.stopPropagation()} className={active ? `${style.pokemonCardModal__content} ${style.active}` : style.pokemonCardModal__content}>
               {selectedCard ?
                 <div>
                     <div className={style.selectedCard}>
