@@ -3,12 +3,15 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    color: snow;
+
 }
 .pokemonItem {
     flex: 0 1 200px;
 }
 
 .pokemonCardsWrapper {
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

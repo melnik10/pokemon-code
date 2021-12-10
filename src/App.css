@@ -3,7 +3,7 @@ body {
 }
 .App {
   text-align: center;
-  background-color: rgba(45, 138, 168, 0.66);
+  background-color: #09121c;
   min-height: 100vh;
   height: 100%;
   display: flex;

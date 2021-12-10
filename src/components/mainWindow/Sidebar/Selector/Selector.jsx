@@ -1,6 +1,7 @@
 import React, {useMemo, useState} from "react";
 import style from './Selector.module.css'
 import {Field, reduxForm} from "redux-form";
+import InputField from "../../../Fields/InputField";
 
 const compareValue = (value, inputValue) => {
     if (!inputValue) {
@@ -54,12 +55,7 @@ const Selector = (props) => {
     )
 }
 
-export const InputField = ({input, inputValue, onClick, type, placeholder, className}) => (
-  <div>
-      <input {...input} onClick={onClick} value={inputValue} placeholder={placeholder} autoComplete={'off'} type={type}
-             className={className}/>
-  </div>
-)
+
 const reduxSelector = reduxForm({form: 'selectorForm'})(Selector)
 
 export default reduxSelector;

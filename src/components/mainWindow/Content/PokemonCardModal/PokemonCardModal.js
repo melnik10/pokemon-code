@@ -2,28 +2,23 @@ import React, {useEffect} from "react";
 import style from './PokemonCardModal.module.css'
 import {connect} from "react-redux";
 import preloaderImage from "../../../../assets/images/Spinner-1s-200px.svg";
+import Preloader from "../../../Preloader/Preloader";
 
 const PokemonCardModal = ({active, setActive, selectedCard}) => {
     debugger;
-    let imageStyle = {
-        width: '250px',
-        height: '500px',
-        flex: "1 1 70%",
-        backgroundImage: `url(${selectedCard?.images?.large}),url(${preloaderImage})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'top',
-    }
     return (
 
       <div onClick={() => setActive(false)}
            className={active ? `${style.pokemonCardModal} ${style.active}` : style.pokemonCardModal}>
-          <div onClick={(event) => event.stopPropagation()} className={active ? `${style.pokemonCardModal__content} ${style.active}` : style.pokemonCardModal__content}>
+          <div onClick={(event) => event.stopPropagation()}
+               className={active ? `${style.pokemonCardModal__content} ${style.active}` : style.pokemonCardModal__content}>
               {selectedCard ?
                 <div>
                     <div className={style.selectedCard}>
-                        <div style={imageStyle}></div>
-                        <div>
-                            <div className={style.pokemonInfo}>
+                        {selectedCard.images ?
+                          <div className={style.image}><img src={selectedCard.images.large}/></div> : <Preloader/>}
+                        <div className={style.pokemonInfo}>
+                            <div className={style.pokemonNames}>
                                 <div><b>Pokemon name: </b>{selectedCard.name}</div>
                                 <div><b>Supertype: </b>{selectedCard.supertype}</div>
                                 <div><b>Types: </b>{selectedCard.types}</div>
@@ -37,7 +32,8 @@ const PokemonCardModal = ({active, setActive, selectedCard}) => {
                             </div>
                         </div>
                     </div>
-                    <div className={style.description}>{selectedCard?.attacks.map((value) => <div>{value.text}</div>)}</div>
+                    <div className={style.description}>{selectedCard?.attacks.map((value) =>
+                      <div>{value.text}</div>)}</div>
                 </div> : ''}
 
           </div>

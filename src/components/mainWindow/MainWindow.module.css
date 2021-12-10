@@ -1,6 +1,6 @@
 .mainWindowWrapper {
     display: grid;
-    width: 1200px;
+    width: 100vw;
     min-height: 100vh;
     margin: 0 auto;
     grid-template-columns: 200px 1fr;
@@ -12,25 +12,26 @@
 
 .header {
     grid-area: header;
-    background-color: green;
+    background-color: #2c3342;
 }
 
 .sidebar {
     grid-area: sidebar;
-    background-color: #61dafb;
+    color: snow;
+    background-color: #09121c;
+    border-right: 1px solid #3c5372;
 }
 
 .content {
-    grid-area: content;
 
+    background-color: #09121c;
+    grid-area: content;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     max-width: 1100px;
     padding-top: 25px;
-
-    background-color: cadetblue;
     word-wrap:break-word;
 
 

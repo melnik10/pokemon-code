@@ -12,11 +12,12 @@
 .selectorChild {
     border: 1px solid gray;
     padding: 5px 10px;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
     transition: all 0.3s ease;
+    border-radius: 5px;
 }
 .selectorChild:hover {
-    background-color: cadetblue;
+    background-color: #32373b;
 }
 
 .selectorItems {
@@ -35,9 +36,13 @@
 }
 
 .inputSelector {
+    background-color: #2c3342;
+    color: snow;
     width: 100%;
     padding: 5px 10px;
     margin-bottom: 10px;
+    border-radius: 5px;
+
 }
 
 .inputArrowSelector {

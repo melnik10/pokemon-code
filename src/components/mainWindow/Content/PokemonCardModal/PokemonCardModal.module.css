@@ -20,13 +20,18 @@
 }
 
 .pokemonCardModal__content {
-    background-color: white;
+    box-sizing: border-box;
+    background-color: rgb(38, 38, 38);
     color: black;
     height: 90vh;
+    color: snow;
     width: 80vw;
     border-radius: 20px;
     transform: scale(0.5);
     transition: 0.3s all;
+    padding: 20px;
+    overflow: auto;
+
 }
 
 .pokemonCardModal__content.active {
@@ -35,21 +40,28 @@
 
 .selectedCard {
     display: flex;
+    border-bottom: 1px solid gray;
 }
 .image {
     flex: 1 1 70%;
+    padding: 10px 0;
 }
 .image img {
     overflow: hidden;
-    height: 50vh;
+    height: 73vh;
 }
-
 .pokemonInfo {
-    margin: 20px;
+    border-left: 1px solid gray;
+}
+.pokemonNames {
+    padding: 20px;
+    text-align: left;
     border-bottom: 1px solid gray;
+
 }
 .pokemonSkills {
-
+    padding: 20px;
+    text-align: left;
 }
 
 .description {

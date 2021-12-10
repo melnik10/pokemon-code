@@ -13,7 +13,11 @@
 .pokemonItemName {
     margin: 10px 0;
 }
-
-.pokemonItemImage img{
-    width: 250px;
+.pokemonItemImage {
+    transition: all 0.4s ease-in-out;
 }
+
+.pokemonItemImage:hover{
+    transform: scale(1.05);
+}
+
