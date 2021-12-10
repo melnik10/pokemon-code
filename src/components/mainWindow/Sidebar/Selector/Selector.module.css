@@ -1,14 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+.selector div {
+    transition: all 0.3s ease;
+}
+.selectorName {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
 .selectorChild {
     border: 1px solid gray;
     padding: 5px 10px;
     margin-bottom: 1px;
+    transition: all 0.3s ease;
+}
+.selectorChild:hover {
+    background-color: cadetblue;
 }
 
-.hide {
-    display: none;
-}
-.nohide {
-    display: block;
-    max-height: 250px;
+.selectorItems {
     overflow: auto;
+    height: 160px;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.3s, opacity 0.3s linear;
 }
+
+.selectorItems.hide {
+    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+
+}
+
+.inputSelector {
+    width: 100%;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.inputArrowSelector {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.inputArrowSelector::after {
+    content: '';
+    background: url("../../../../assets/icons/arrowIcon.png") no-repeat center center;
+    background-size: 20px 20px;
+
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    right: 5px;
+    top: 5px;
+    transition: all 0.3s ease;
+    transform: rotate(0deg);
+}
+.inputArrowSelector.active::after{
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+

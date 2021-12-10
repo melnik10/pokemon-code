@@ -1,7 +1,7 @@
 .mainWindowWrapper {
     display: grid;
     width: 1200px;
-    min-height: 600px;
+    min-height: 100vh;
     margin: 0 auto;
     grid-template-columns: 200px 1fr;
     grid-template-rows: 60px 1fr;
@@ -24,9 +24,11 @@
     grid-area: content;
 
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
     max-width: 1100px;
+    padding-top: 25px;
 
     background-color: cadetblue;
     word-wrap:break-word;

@@ -1,10 +1,19 @@
 .pokemonItem {
     border: 1px solid gray;
     padding: 20px 10px;
-    flex: 0 1 30%;
-    margin: 50px;
+    flex: 0 1 40%;
+    margin: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemonItemName {
+    margin: 10px 0;
 }
 
 .pokemonItemImage img{
-    width: 150px;
+    width: 250px;
 }

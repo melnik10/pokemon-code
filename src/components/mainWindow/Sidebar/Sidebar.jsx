@@ -2,18 +2,22 @@ import React, {useEffect, useState} from "react";
 import style from './Sidebar.module.css'
 import SelectForm from "./SelectForm";
 import {connect} from "react-redux";
-import {getPokemonCardsTC} from "../../../redux/reducers/pokemon_reducer";
+import {clearPokemonCards, getPokemonCardsTC} from "../../../redux/reducers/pokemon_reducer";
 import Selector from "./Selector/Selector";
+import {reset} from "redux-form";
 
 const Sidebar = (props) => {
-    const onChangeSelect = (data) => {
-        let queryCards = `types:"${data.types}" subtypes:"${data.subtypes}"`
-        props.getPokemonCardsTC(queryCards)
+    const [type, setType] = useState(props.types[0])
+    const [subtype, setSubtype] = useState(props.subtypes[0])
+    const onChangeSelect = () => {
+        props.getPokemonCardsTC(type, subtype)
+        props.clearPokemonCards();
     }
+    onChangeSelect()
     return (
       <div className={style.sidebar}>
-          {/*<SelectForm  initialValues={{types: props.types[0], subtypes: props.subtypes[0]}} {...props} onChange={onChangeSelect}/>*/}
-          <Selector {...props}/>
+          <Selector reset={reset} selectorType={'types'} onClickSelectorValue={setType} inputName={'Types'} {...props}/>
+          <Selector reset={reset} selectorType={'subtypes'} onClickSelectorValue={setSubtype} {...props}/>
       </div>
     )
 }
@@ -25,4 +29,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {getPokemonCardsTC})(Sidebar);
+export default connect(mapStateToProps, {reset, getPokemonCardsTC, clearPokemonCards})(Sidebar);
