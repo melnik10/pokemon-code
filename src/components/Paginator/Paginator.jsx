@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import s from "./Paginator.module.css"
-import arrowRight from './../../assets/icons/arrowRight.png'
-import arrowLeft from './../../assets/icons/arrowLeft.png'
+import arrowRight from './../../assets/icons/arrowRightWhite.png'
+import arrowLeft from './../../assets/icons/arrowLeftWhite.png'
 
 
 export const Paginator = ({totalItemsCount, pageSize, onPageChanged, portionSize = 10, currentType, currentSubtype}) => {

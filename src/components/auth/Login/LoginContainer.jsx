@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginForm from "./LoginForm";
-import ConfirmForm from "./ConfirmForm";
+import ConfirmForm from "../Confirm/ConfirmForm";
 import {connect} from "react-redux";
 import {
     generateConfirmCode,
@@ -28,7 +28,7 @@ export const LoginContainer = (props) => {
     }
 
     const confirmSubmit = (data) => {
-        debugger;
+        
         if (data.confirmCode == props.confirmCode) {
             props.setConfirmUser()
             localStorage.isConfirm = true;

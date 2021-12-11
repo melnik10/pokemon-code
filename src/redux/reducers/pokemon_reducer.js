@@ -61,7 +61,7 @@ export const getPokemonCards = (cards) => {
 
 
 export const getPokemonSelectedCard = (card) => {
-    debugger;
+    
     return {
         type: GET_POKEMON_SELECTED_CARD,
         payload: {

@@ -28,16 +28,5 @@ let ReduxSelectForm = reduxForm({
     form: 'selectType',
 })(SelectForm)
 
-// const selector = formValueSelector('selectingFormValues') // <-- same as form name
-// ReduxSelectForm = connect(state => {
-//     // can select values individually
-//     const types = selector(state, 'types')
-//     const subtypes = selector(state, 'subtypes')
-//     // or together as a group
-//     return {
-//         types,
-//         subtypes,
-//     }
-// })(ReduxSelectForm)
 
 export default ReduxSelectForm

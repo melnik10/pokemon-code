@@ -7,10 +7,10 @@ export const LoginForm = (props) => {
     return (
       <div>
           <form onSubmit={props.handleSubmit}>
-              <div className={style.loginTitle}>POKEMON FOR CODE</div>
-              <div><Field className={style.loginInput} name='login' component={InputField} type='text'/></div>
-              <div><Field className={style.loginInput} name='password' component={InputField} type='password'/></div>
-              <button className={style.loginButton} type={'submit'}>Login</button>
+              <div className={style.title}>POKEMON FOR CODE</div>
+              <div><Field className={style.input} name='login' component={InputField} type='text' placeholder={'Login'}/></div>
+              <div><Field className={style.input} name='password' component={InputField} type='password' placeholder={'Password'}/></div>
+              <button className={style.button} type={'submit'}>Login</button>
           </form>
       </div>
     )

@@ -16,7 +16,7 @@ const Selector = (props) => {
     const [inputValue, setInputValue] = useState('')
     const [inputPlaceholder, setInputPlaceholder] = useState(props[props.selectorType][0])
     return (
-      <form>
+      <form className={style.selectorForm}>
           <div className={style.selectorName}>
               <span>{props.selectorType.toString().toUpperCase()}</span>
           </div>
@@ -26,12 +26,13 @@ const Selector = (props) => {
               </div>
               <Field component={InputField}
                      name={props.inputName}
-                     // onFocus={() => setHideSelect(false)}
                      onChange={(event, newInputValue) => {
+                         setHideSelect(false)
                          setInputValue(newInputValue)
                      }}
                      inputValue={inputValue}
                      className={style.inputSelector}
+                     onBlur={() => setHideSelect(true)}
                      onClick={() => setHideSelect(!isHideSelect)}
                      placeholder={inputPlaceholder}/>
 

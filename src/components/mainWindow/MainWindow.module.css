@@ -26,13 +26,22 @@
 
     background-color: #09121c;
     grid-area: content;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    max-width: 1100px;
     padding-top: 25px;
     word-wrap:break-word;
 
 
+}
+
+@media (max-height: 375px), (max-width: 500px){
+    .mainWindowWrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 100px 1fr;
+        grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "content";
+    }
+    .content {
+        padding-top: 10px;
+    }
 }

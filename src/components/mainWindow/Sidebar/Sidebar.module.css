@@ -3,3 +3,10 @@
     flex-direction: column;
     padding: 30px 15px;
 }
+
+@media (max-width: 500px),(max-height: 380px) {
+    .sidebar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

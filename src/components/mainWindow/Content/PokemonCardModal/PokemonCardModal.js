@@ -5,7 +5,7 @@ import preloaderImage from "../../../../assets/images/Spinner-1s-200px.svg";
 import Preloader from "../../../Preloader/Preloader";
 
 const PokemonCardModal = ({active, setActive, selectedCard}) => {
-    debugger;
+    
     return (
 
       <div onClick={() => setActive(false)}

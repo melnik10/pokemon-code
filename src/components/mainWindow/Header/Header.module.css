@@ -8,13 +8,17 @@
     cursor: pointer;
     height: 50%;
     max-width: 100px;
-    border: 1px solid black;
+    border: 1px solid snow;
     margin: 15px;
     padding: 5px;
     transition: all 0.5s ease;
+    color: snow;
 }
 .logoutButton:hover {
-    background-color: rgba(100,100,100,0.5);
+    color: black;
+    border: 1px solid black;
+    background-color: snow;
+
 }
 .backButton {
     display: none;

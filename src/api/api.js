@@ -12,7 +12,7 @@ export const pokemonAPI = {
         return instance.get('/subtypes')
     },
     getCards(type, subtype, currentPage, pageSize) {
-        debugger;
+        
         let queryGetCards = `/cards?q=types:"${type}" subtypes:"${subtype}"&page=${currentPage}&pageSize=${pageSize}`
         return instance.get(queryGetCards)  ///cards?pageSize=4&page=1
     },

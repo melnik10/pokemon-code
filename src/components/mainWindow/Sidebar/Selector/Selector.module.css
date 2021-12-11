@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+
+.selector {
+    position: relative;
+}
 .selector div {
     transition: all 0.3s ease;
 }
@@ -10,11 +14,13 @@
     font-weight: 700;
 }
 .selectorChild {
+    cursor: pointer;
     border: 1px solid gray;
     padding: 5px 10px;
     margin-bottom: 2px;
     transition: all 0.3s ease;
     border-radius: 5px;
+    margin-right: 10px;
 }
 .selectorChild:hover {
     background-color: #32373b;
@@ -26,6 +32,7 @@
     visibility: visible;
     opacity: 1;
     transition: visibility 0.3s, opacity 0.3s linear;
+    margin-bottom: 10px;
 }
 
 .selectorItems.hide {
@@ -42,6 +49,7 @@
     padding: 5px 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    font-family: 'Courier Prime', monospace;
 
 }
 
@@ -52,7 +60,7 @@
 
 .inputArrowSelector::after {
     content: '';
-    background: url("../../../../assets/icons/arrowIcon.png") no-repeat center center;
+    background: url("../../../../assets/icons/arrowUp.png") no-repeat center center;
     background-size: 20px 20px;
 
     position: absolute;
@@ -69,8 +77,36 @@
 }
 
 
+@media (max-width: 500px), (max-height: 380px) {
+    .selectorItems {
+        background-color: #2c3342;
+    }
+    .selectorForm {
+        flex: 0 1 45%;
 
+    }
+}
 
+@media (max-width: 340px){
+    .selectorItems {
+
+        padding: 5px;
+        font-size: 13px;
+    }
+    .selectorForm {
+        flex: 0 1 48%;
+    }
+
+    .inputSelector {
+        margin-bottom: 5px;
+    }
+}
+@media (max-height: 380px) {
+    .selectorForm {
+        flex: 0 1 40%;
+    }
+
+}
 
 
 

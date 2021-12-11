@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {Field, reduxForm} from "redux-form";
+import InputField from "../../Fields/InputField";
+import style from '../Login/LoginForm.module.css'
 
 
 export const ConfirmForm = (props) => {
@@ -11,15 +13,15 @@ export const ConfirmForm = (props) => {
     return (
       <div>
           <form onSubmit={props.handleSubmit}>
-              <div><Field name='confirmCode' component='input' type='text' placeholder='Input code...'/></div>
-              <div onClick={() => {
+              <div><Field className={style.input} name='confirmCode' component={InputField} type='number'  placeholder='Input code...'/></div>
+              <div className={style.sendCode} onClick={() => {
                   let newCode = props.getRandomCode(100000, 1000000)
                   setCode(newCode)
                   props.setConfirmCode(newCode)
               }
-              }>Выслать код еще раз?
+              }>Send the code again?
               </div>
-              <button type={'submit'}>Submit</button>
+              <button className={style.button} type={'submit'}>Send code</button>
           </form>
       </div>
     )

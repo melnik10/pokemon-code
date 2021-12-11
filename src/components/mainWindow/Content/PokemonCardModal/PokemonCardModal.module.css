@@ -41,6 +41,7 @@
 .selectedCard {
     display: flex;
     border-bottom: 1px solid gray;
+    word-wrap: break-word;
 }
 .image {
     flex: 1 1 70%;
@@ -52,6 +53,7 @@
 }
 .pokemonInfo {
     border-left: 1px solid gray;
+    overflow: auto;
 }
 .pokemonNames {
     padding: 20px;
@@ -69,3 +71,26 @@
     padding-left: 15px;
     text-align: left;
 }
+
+@media (max-width: 400px){
+
+    .selectedCard {
+        display: block;
+    }
+
+    .image img {
+        height: 50vh;
+    }
+
+    .pokemonInfo {
+        border: none;
+
+    }
+}
+
+@media (max-width: 340px) {
+    .image img {
+        height: 50vh;
+    }
+}
+

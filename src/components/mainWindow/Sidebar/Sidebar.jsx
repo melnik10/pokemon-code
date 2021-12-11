@@ -16,8 +16,8 @@ const Sidebar = (props) => {
     onChangeSelect()
     return (
       <div className={style.sidebar}>
-          <Selector reset={reset} selectorType={'types'} onClickSelectorValue={setType} inputName={'Types'} {...props}/>
-          <Selector reset={reset} selectorType={'subtypes'} onClickSelectorValue={setSubtype} {...props}/>
+          <Selector selectorType={'types'} onClickSelectorValue={setType} inputName={'Types'} {...props}/>
+          <Selector selectorType={'subtypes'} onClickSelectorValue={setSubtype}  inputName={'Subtypes'} {...props}/>
       </div>
     )
 }
