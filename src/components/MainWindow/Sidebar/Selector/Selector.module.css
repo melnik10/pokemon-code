@@ -4,6 +4,7 @@
 
 .selector {
     position: relative;
+    z-index: 10;
 }
 .selector div {
     transition: all 0.3s ease;

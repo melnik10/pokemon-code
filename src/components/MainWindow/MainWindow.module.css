@@ -23,13 +23,10 @@
 }
 
 .content {
-
     background-color: #09121c;
     grid-area: content;
     padding-top: 25px;
     word-wrap:break-word;
-
-
 }
 
 @media (max-height: 375px), (max-width: 500px){

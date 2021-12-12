@@ -1,8 +1,7 @@
 import React from "react";
 import style from './PokemonCards.module.css'
 import PokemonItem from "./PokemonItem";
-import Preloader from "../../Preloader/Preloader";
-import Paginator from "../../Paginator/Paginator";
+import Preloader from "../../common/Preloader/Preloader";
 
 const PokemonCards = (props) => {
     if (!props.cards) {
@@ -12,16 +11,7 @@ const PokemonCards = (props) => {
     }
     return (
       <div>
-          <div className={style.paginator}>
-              {props.cards.length ? <Paginator totalItemsCount={props.cards.length}
-                                               portionSize={3}
-                                               currentType={props.currentType}
-                                               currentSubtype={props.currentSubtype}
-                                               onPageChanged={props.getPokemonCards}
-                                               pageSize={4}/> : ''}
-          </div>
           <div className={style.pokemonCardsWrapper}>
-
               <div className={style.pokemonCards}>
                   {props.cards.length ? props.cards.map((card, index) => {
                       if (index > 3) {

@@ -2,7 +2,7 @@ import './App.css';
 import LoginContainer from "./components/auth/Login/LoginContainer";
 import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import {connect} from "react-redux";
-import MainWindow from "./components/mainWindow/MainWindow";
+import MainWindow from "./components/MainWindow/MainWindow";
 
 const getObjectProperty = (obj, path, defaultValue = undefined) => {
     const arrPath = path.toString().split('.')

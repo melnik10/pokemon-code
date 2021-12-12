@@ -25,7 +25,7 @@
         height: 275px;
     }
 }
-@media (max-width: 340px),(max-height: 380px) {
+@media (max-width: 380px),(max-height: 380px) {
     .pokemonItem {
         margin: 10px;
         height: auto;

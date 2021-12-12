@@ -1,7 +1,7 @@
 import React from 'react'
 import {Field, reduxForm} from "redux-form";
 import style from './LoginForm.module.css'
-import InputField from "../../Fields/InputField";
+import InputField from "../../common/Fields/InputField";
 
 export const LoginForm = (props) => {
     return (

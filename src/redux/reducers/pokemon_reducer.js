@@ -3,6 +3,7 @@ import {pokemonAPI} from "../../api/api";
 const GET_POKEMON_TYPES = 'pokemon/GET_POKEMON_TYPES'
 const GET_POKEMON_SUBTYPES = 'pokemon/GET_POKEMON_SUBTYPES'
 const SET_CURRENT_POKEMON_TYPE_SUBTYPE = 'pokemon/SET_CURRENT_POKEMON_TYPE_SUBTYPE'
+const SET_POKEMON_CARDS_LENGTH = 'pokemon/SET_POKEMON_CARDS_LENGTH'
 const GET_POKEMON_CARDS = 'pokemon/GET_POKEMON_CARDS'
 const CLEAR_POKEMON_CARDS = 'pokemon/CLEAR_POKEMON_CARDS'
 const GET_POKEMON_SELECTED_CARD = 'pokemon/GET_POKEMON_SELECTED_CARD'
@@ -28,6 +29,11 @@ const pokemonReducer = (state = initialState, action) => {
                 ...state,
                 cards: action.payload.cards,
             }
+        case SET_POKEMON_CARDS_LENGTH:
+            return {
+                ...state,
+                cardsLength: action.payload.cardsLength
+            }
         case GET_POKEMON_SELECTED_CARD:
             return {
                 ...state,
@@ -37,7 +43,7 @@ const pokemonReducer = (state = initialState, action) => {
         case CLEAR_POKEMON_CARDS:
             return {
                 ...state,
-                cards: null,
+                cards: null
             }
         case SET_CURRENT_POKEMON_TYPE_SUBTYPE:
             return {
@@ -87,6 +93,14 @@ export const setCurrentPokemonTypeSubtype = (type, subtype) => {
         }
     }
 }
+export const setPokemonCardsLength = (cardsLength) => {
+    return {
+        type: SET_POKEMON_CARDS_LENGTH,
+        payload: {
+            cardsLength
+        }
+    }
+}
 
 export const clearPokemonCards = () => {
     return {
@@ -119,11 +133,16 @@ export const getPokemonSubtypesTC = () => async (dispatch) => {
     }
 }
 
-export const getPokemonCardsTC = (type,subtype , currentPage = 1, pageSize = 250 ) => async (dispatch) => {
+export const getPokemonCardsTC = (type,subtype , isChangeType = false, currentPage = 1, pageSize = 250 ) => async (dispatch) => {
     const response = await pokemonAPI.getCards(type, subtype, currentPage, pageSize)
     dispatch(setCurrentPokemonTypeSubtype(type,subtype))
     if(response.status === 200) {
-        dispatch(getPokemonCards(response.data.data))
+        const cards = response.data.data
+        if(isChangeType) {
+            
+            dispatch(setPokemonCardsLength(cards.length))
+        }
+        dispatch(getPokemonCards(cards))
     }
 }
 

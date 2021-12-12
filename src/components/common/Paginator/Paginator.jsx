@@ -1,11 +1,19 @@
 import React, {useState} from "react";
 import s from "./Paginator.module.css"
-import arrowRight from './../../assets/icons/arrowRightWhite.png'
-import arrowLeft from './../../assets/icons/arrowLeftWhite.png'
+import arrowRight from '../../../assets/icons/arrowRightWhite.png'
+import arrowLeft from '../../../assets/icons/arrowLeftWhite.png'
 
 
-export const Paginator = ({totalItemsCount, pageSize, onPageChanged, portionSize = 10, currentType, currentSubtype}) => {
-    const [pagesCount, setPagesCount] = useState(Math.ceil(totalItemsCount / pageSize))
+export const Paginator = ({
+                              totalItemsCount,
+                              pageSize,
+                              onPageChanged,
+                              portionSize = 10,
+                              currentType,
+                              currentSubtype,
+                              clearPokemonCards
+                          }) => {
+    const pagesCount = Math.ceil(totalItemsCount / pageSize)
     const [currentPage, setCurrentPage] = useState(1)
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
@@ -16,6 +24,8 @@ export const Paginator = ({totalItemsCount, pageSize, onPageChanged, portionSize
     let [portionNumber, setPortionNumber] = useState(1)
     let leftBorderPortion = (portionNumber - 1) * portionSize + 1
     let rightBorderPortion = portionNumber * portionSize;
+    
+
     return (
       <div className={s.pages}>
           {
@@ -29,7 +39,9 @@ export const Paginator = ({totalItemsCount, pageSize, onPageChanged, portionSize
                     return (<span key={page}
                                   onClick={() => {
                                       setCurrentPage(Number(page))
-                                      onPageChanged(currentType, currentSubtype, page, pageSize)
+                                      clearPokemonCards()
+                                      onPageChanged(currentType, currentSubtype,false, page, pageSize)
+
                                   }}
                                   className={s.pageItem + ' ' + (currentPage === page ? s.selectedPageItem : '')}>{page}</span>)
                 })

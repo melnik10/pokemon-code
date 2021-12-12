@@ -1,14 +1,9 @@
 .pokemonCards {
-    padding-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     color: snow;
-
-}
-.pokemonItem {
-    flex: 0 1 200px;
 }
 
 .pokemonCardsWrapper {
@@ -16,10 +11,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    animation: show 1s;
 }
 
-.paginator {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+@keyframes show {
+    from{opacity: 0;} to {opacity: 1;}
 }

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {Field, reduxForm} from "redux-form";
-import InputField from "../../Fields/InputField";
+import InputField from "../../common/Fields/InputField";
 import style from '../Login/LoginForm.module.css'
 
 

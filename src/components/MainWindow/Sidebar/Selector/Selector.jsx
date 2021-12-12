@@ -1,17 +1,16 @@
-import React, {useMemo, useState} from "react";
+import React, {useCallback, useEffect, useMemo, useState} from "react";
 import style from './Selector.module.css'
 import {Field, reduxForm} from "redux-form";
-import InputField from "../../../Fields/InputField";
-
-const compareValue = (value, inputValue) => {
-    if (!inputValue) {
-        return true
-    } else {
-        return value.toString().toUpperCase().includes(inputValue.toUpperCase())
-    }
-}
+import InputField from "../../../common/Fields/InputField";
 
 const Selector = (props) => {
+    const compareValue = useCallback((value, inputValue) => {
+        if (!inputValue) {
+            return true
+        } else {
+            return value.toString().toUpperCase().includes(inputValue.toUpperCase())
+        }
+    }, [])
     const [isHideSelect, setHideSelect] = useState(true)
     const [inputValue, setInputValue] = useState('')
     const [inputPlaceholder, setInputPlaceholder] = useState(props[props.selectorType][0])
@@ -20,7 +19,7 @@ const Selector = (props) => {
           <div className={style.selectorName}>
               <span>{props.selectorType.toString().toUpperCase()}</span>
           </div>
-          <div lassName={style.selector}>
+          <div className={style.selector}>
               <div onClick={() => setHideSelect(!isHideSelect)}
                    className={isHideSelect ? `${style.inputArrowSelector} ${style.active}` : style.inputArrowSelector}>
               </div>
@@ -40,7 +39,7 @@ const Selector = (props) => {
                   <div>
                       {props[props.selectorType] ? props[props.selectorType].filter((value) => compareValue(value, inputValue)).map((value, index) => {
                           return (
-                            <div className={style.selectorChild} onClick={(event) => {
+                            <div key={value} className={style.selectorChild} onClick={(event) => {
                                 const placeholderValue = event.target.innerText
                                 props.onClickSelectorValue(placeholderValue)
                                 setInputPlaceholder(placeholderValue)

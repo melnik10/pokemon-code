@@ -6,9 +6,10 @@ import PokemonCards from "./Content/PokemonCards";
 import {connect} from "react-redux";
 import {setInitializedSuccess} from "../../redux/reducers/mainWindow_reducer";
 import PokemonCardModal from "./Content/PokemonCardModal/PokemonCardModal";
-import {getPokemonCardsTC, getPokemonSelectedCard} from "../../redux/reducers/pokemon_reducer";
+import {clearPokemonCards, getPokemonCardsTC, getPokemonSelectedCard} from "../../redux/reducers/pokemon_reducer";
 import {logout} from "../../redux/reducers/auth_reducer";
-import Preloader from "../Preloader/Preloader";
+import Preloader from "../common/Preloader/Preloader";
+import Content from "./Content/Content";
 
 const MainWindow = (props) => {
     const [modalActive, setModalActive] = useState(false)
@@ -24,14 +25,7 @@ const MainWindow = (props) => {
       <div className={style.mainWindowWrapper}>
           <div className={style.header}><Header logout={props.logout}/></div>
           <div className={style.sidebar}><Sidebar/></div>
-          <div className={style.content}><PokemonCards types={props.types}
-                                                       getPokemonCards={props.getPokemonCardsTC}
-                                                       getCard={props.getPokemonSelectedCard}
-                                                       cards={props.cards}
-                                                       currentType={props.currentType}
-                                                       currentSubtype={props.currentSubtype}
-                                                       setModalActive={setModalActive}
-                                                       subtypes={props.subtypes}/></div>
+          <div className={style.content}><Content setModalActive={setModalActive}/></div>
           <PokemonCardModal active={modalActive} setActive={setModalActive}/>
       </div>
     )
@@ -40,17 +34,9 @@ const MainWindow = (props) => {
 const mapStateToProps = (state) => {
     return {
         initialized: state.mainWindow.initialized,
-        cards: state.pokemon.cards,
-        types: state.pokemon.types,
-        subtypes: state.pokemon.subtypes,
-        currentType: state.pokemon.type,
-        currentSubtype: state.pokemon.subtype,
-
     }
 }
 export default connect(mapStateToProps, {
     logout,
-    getPokemonCardsTC,
     setInitializedSuccess,
-    getPokemonSelectedCard
 })(MainWindow)

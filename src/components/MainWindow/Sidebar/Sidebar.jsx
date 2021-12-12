@@ -10,7 +10,7 @@ const Sidebar = (props) => {
     const [type, setType] = useState(props.types[0])
     const [subtype, setSubtype] = useState(props.subtypes[0])
     const onChangeSelect = () => {
-        props.getPokemonCardsTC(type, subtype)
+        props.getPokemonCardsTC(type, subtype, true)
         props.clearPokemonCards();
     }
     onChangeSelect()

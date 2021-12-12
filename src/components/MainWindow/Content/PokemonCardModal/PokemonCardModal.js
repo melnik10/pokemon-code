@@ -2,10 +2,11 @@ import React, {useEffect} from "react";
 import style from './PokemonCardModal.module.css'
 import {connect} from "react-redux";
 import preloaderImage from "../../../../assets/images/Spinner-1s-200px.svg";
-import Preloader from "../../../Preloader/Preloader";
+import Preloader from "../../../common/Preloader/Preloader";
+import Image from "../../../common/Image/Image";
 
 const PokemonCardModal = ({active, setActive, selectedCard}) => {
-    
+
     return (
 
       <div onClick={() => setActive(false)}
@@ -15,8 +16,7 @@ const PokemonCardModal = ({active, setActive, selectedCard}) => {
               {selectedCard ?
                 <div>
                     <div className={style.selectedCard}>
-                        {selectedCard.images ?
-                          <div className={style.image}><img src={selectedCard.images.large}/></div> : <Preloader/>}
+                        <div className={style.image}><Image image={selectedCard.images.large}/></div>
                         <div className={style.pokemonInfo}>
                             <div className={style.pokemonNames}>
                                 <div><b>Pokemon name: </b>{selectedCard.name}</div>
@@ -33,7 +33,7 @@ const PokemonCardModal = ({active, setActive, selectedCard}) => {
                         </div>
                     </div>
                     <div className={style.description}>{selectedCard?.attacks.map((value) =>
-                      <div>{value.text}</div>)}</div>
+                      <div key={value.text}>{value.text}</div>)}</div>
                 </div> : ''}
 
           </div>
