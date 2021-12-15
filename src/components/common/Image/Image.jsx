@@ -17,7 +17,7 @@ const Image = ({image, onClickImage = () => false}) => {
     return (
       <div className={style.image}>
           <div style={{display: preloaderStyle}}>
-              <Preloader/>
+              <Preloader style={'width=50px'}/>
           </div>
           {image ? <div style={{display: imageStyle, height: '100%'}}>
               <img onLoad={() => setIsLoadImage(false)} onClick={() => onClickImage()} src={image}/>

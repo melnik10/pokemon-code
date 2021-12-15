@@ -22,6 +22,7 @@ export const ConfirmForm = (props) => {
               }>Send the code again?
               </div>
               <button className={style.button} type={'submit'}>Send code</button>
+              <div className={style.errorContainer}><div className={style.error}>{props.error}</div></div>
           </form>
       </div>
     )

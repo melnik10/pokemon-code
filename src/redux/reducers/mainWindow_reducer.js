@@ -1,5 +1,4 @@
 import {getPokemonSubtypesTC, getPokemonTypesTC} from "./pokemon_reducer";
-import {getPokemonCardsTC} from "./pokemon_reducer";
 
 const INITIALIZED_SUCCESS = 'app/INITIALIZED-SUCCESS'
 
@@ -26,18 +25,6 @@ const setInitializedSuccessAC = () => {
         type: INITIALIZED_SUCCESS,
     }
 }
-
-// export const setInitializedSuccess = () => async (dispatch) => {
-//     const types = await dispatch(getPokemonTypesTC())
-//     const subtypes = await dispatch(getPokemonSubtypesTC())
-//     let queryCards = `types:${types[0]} subtypes:${subtypes[0]}`
-//     const cards = dispatch(getPokemonCardsTC(queryCards))
-//     Promise.all([types, subtypes, cards])
-//       .then(() => {
-//           dispatch(setInitializedSuccessAC())
-//       })
-// }
-
 
 export const setInitializedSuccess = () => (dispatch) => {
     const types = dispatch(getPokemonTypesTC())

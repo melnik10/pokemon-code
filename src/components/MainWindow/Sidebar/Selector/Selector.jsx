@@ -14,6 +14,7 @@ const Selector = (props) => {
     const [isHideSelect, setHideSelect] = useState(true)
     const [inputValue, setInputValue] = useState('')
     const [inputPlaceholder, setInputPlaceholder] = useState(props[props.selectorType][0])
+
     return (
       <form className={style.selectorForm}>
           <div className={style.selectorName}>

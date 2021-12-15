@@ -21,6 +21,7 @@ const MainWindow = (props) => {
           <Preloader/>
         )
     }
+    console.log('MainWindow render')
     return (
       <div className={style.mainWindowWrapper}>
           <div className={style.header}><Header logout={props.logout}/></div>

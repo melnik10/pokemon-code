@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import s from "./Paginator.module.css"
 import arrowRight from '../../../assets/icons/arrowRightWhite.png'
 import arrowLeft from '../../../assets/icons/arrowLeftWhite.png'
@@ -21,7 +21,10 @@ export const Paginator = ({
     }
 
     let portionsCount = Math.ceil(pagesCount / portionSize)
-    let [portionNumber, setPortionNumber] = useState(1)
+    let [portionNumber, setPortionNumber] = useState(1, )
+    useEffect(() => {
+        setPortionNumber(1)
+    }, [totalItemsCount])
     let leftBorderPortion = (portionNumber - 1) * portionSize + 1
     let rightBorderPortion = portionNumber * portionSize;
     
@@ -40,7 +43,7 @@ export const Paginator = ({
                                   onClick={() => {
                                       setCurrentPage(Number(page))
                                       clearPokemonCards()
-                                      onPageChanged(currentType, currentSubtype,false, page, pageSize)
+                                      onPageChanged(currentType, currentSubtype, false, page, pageSize)
 
                                   }}
                                   className={s.pageItem + ' ' + (currentPage === page ? s.selectedPageItem : '')}>{page}</span>)

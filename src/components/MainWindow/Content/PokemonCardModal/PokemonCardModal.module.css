@@ -3,6 +3,7 @@
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
+    z-index: 999;
     top: 0;
     left: 0;
 
@@ -38,59 +39,5 @@
     transform: scale(1);
 }
 
-.selectedCard {
-    display: flex;
-    border-bottom: 1px solid gray;
-    word-wrap: break-word;
-}
-.image {
-    flex: 1 1 70%;
-    padding: 10px 0;
-}
-.image img {
-    overflow: hidden;
-    height: 73vh;
-}
-.pokemonInfo {
-    border-left: 1px solid gray;
-    overflow: auto;
-}
-.pokemonNames {
-    padding: 20px;
-    text-align: left;
-    border-bottom: 1px solid gray;
 
-}
-.pokemonSkills {
-    padding: 20px;
-    text-align: left;
-}
-
-.description {
-    margin-top: 20px;
-    padding-left: 15px;
-    text-align: left;
-}
-
-@media (max-width: 400px){
-
-    .selectedCard {
-        display: block;
-    }
-
-    .image img {
-        height: 50vh;
-    }
-
-    .pokemonInfo {
-        border: none;
-
-    }
-}
-
-@media (max-width: 340px) {
-    .image img {
-        height: 50vh;
-    }
-}
 

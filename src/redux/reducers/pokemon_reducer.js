@@ -7,6 +7,7 @@ const SET_POKEMON_CARDS_LENGTH = 'pokemon/SET_POKEMON_CARDS_LENGTH'
 const GET_POKEMON_CARDS = 'pokemon/GET_POKEMON_CARDS'
 const CLEAR_POKEMON_CARDS = 'pokemon/CLEAR_POKEMON_CARDS'
 const GET_POKEMON_SELECTED_CARD = 'pokemon/GET_POKEMON_SELECTED_CARD'
+const CLEAR_POKEMON_SELECTED_CARD = 'pokemon/CLEAR_POKEMON_SELECTED_CARD'
 
 const initialState = {
 }
@@ -51,6 +52,11 @@ const pokemonReducer = (state = initialState, action) => {
                 type: action.payload.type,
                 subtype: action.payload.subtype
             }
+        case CLEAR_POKEMON_SELECTED_CARD:
+            return {
+                ...state,
+                selectedCard: null
+            }
         default:
             return state
     }
@@ -73,6 +79,13 @@ export const getPokemonSelectedCard = (card) => {
         payload: {
             selectedCard: card
         }
+    }
+}
+
+export const clearPokemonSelectedCard = () => {
+
+    return {
+        type: CLEAR_POKEMON_SELECTED_CARD,
     }
 }
 export const getPokemonTypes = (types) => {
@@ -139,7 +152,6 @@ export const getPokemonCardsTC = (type,subtype , isChangeType = false, currentPa
     if(response.status === 200) {
         const cards = response.data.data
         if(isChangeType) {
-            
             dispatch(setPokemonCardsLength(cards.length))
         }
         dispatch(getPokemonCards(cards))
