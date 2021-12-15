@@ -11,7 +11,7 @@ const LoginForm = (props) => {
               <div><Field className={style.input} name='login' component={InputField} type='text' placeholder={'Login'}/></div>
               <div><Field className={style.input} name='password' component={InputField} type='password' placeholder={'Password'}/></div>
               <button className={style.button} type={'submit'}>Login</button>
-              <div className={style.errorContainer}><div className={style.error}>{props.error}</div></div>
+              <div className={style.errorContainer}>{<div className={style.error}>{props.error}</div>}</div>
           </form>
 
       </div>
