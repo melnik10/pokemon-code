@@ -1,4 +1,4 @@
-#App for CODE
+#Pokemon for CODE
 ## `1 задание - firstExercise.js`
 
 
