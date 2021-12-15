@@ -5,6 +5,9 @@
     flex-wrap: wrap;
     color: snow;
 }
+.pokemonCardsIsNull {
+    padding: 5px;
+}
 
 .pokemonCardsWrapper {
     display: flex;

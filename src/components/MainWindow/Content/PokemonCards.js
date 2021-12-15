@@ -26,7 +26,7 @@ const PokemonCards = (props) => {
                         id={card.id}
                         key={card.id}
                         card={card}/>)
-                  }) : <div>The such pokemons is not exist...</div>}
+                  }) : <div className={style.pokemonCardsIsNull}>The such pokemons is not exist...</div>}
               </div>
           </div>
       </div>

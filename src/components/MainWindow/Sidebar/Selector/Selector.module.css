@@ -3,8 +3,7 @@
 }
 
 .selector {
-    position: relative;
-    z-index: 10;
+
 }
 .selector div {
     transition: all 0.3s ease;
@@ -28,6 +27,8 @@
 }
 
 .selectorItems {
+    position: relative;
+    z-index: 10;
     overflow: auto;
     height: 160px;
     visibility: visible;
@@ -40,6 +41,7 @@
     visibility: hidden;
     overflow: hidden;
     opacity: 0;
+    z-index: 0;
 
 }
 
