@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/codeApp/static/css/main.6b8eddbf.chunk.css",
-    "main.js": "/codeApp/static/js/main.f773de6c.chunk.js",
-    "main.js.map": "/codeApp/static/js/main.f773de6c.chunk.js.map",
-    "runtime-main.js": "/codeApp/static/js/runtime-main.69e94c93.js",
-    "runtime-main.js.map": "/codeApp/static/js/runtime-main.69e94c93.js.map",
-    "static/js/2.692ea478.chunk.js": "/codeApp/static/js/2.692ea478.chunk.js",
-    "static/js/2.692ea478.chunk.js.map": "/codeApp/static/js/2.692ea478.chunk.js.map",
-    "static/js/3.c46fa89a.chunk.js": "/codeApp/static/js/3.c46fa89a.chunk.js",
-    "static/js/3.c46fa89a.chunk.js.map": "/codeApp/static/js/3.c46fa89a.chunk.js.map",
-    "index.html": "/codeApp/index.html",
-    "static/css/main.6b8eddbf.chunk.css.map": "/codeApp/static/css/main.6b8eddbf.chunk.css.map",
-    "static/js/2.692ea478.chunk.js.LICENSE.txt": "/codeApp/static/js/2.692ea478.chunk.js.LICENSE.txt",
-    "static/media/Spinner-1s-200px.9945c37d.svg": "/codeApp/static/media/Spinner-1s-200px.9945c37d.svg"
+    "main.css": "/pokemon-code/static/css/main.6b8eddbf.chunk.css",
+    "main.js": "/pokemon-code/static/js/main.ffb2720d.chunk.js",
+    "main.js.map": "/pokemon-code/static/js/main.ffb2720d.chunk.js.map",
+    "runtime-main.js": "/pokemon-code/static/js/runtime-main.9f783173.js",
+    "runtime-main.js.map": "/pokemon-code/static/js/runtime-main.9f783173.js.map",
+    "static/js/2.692ea478.chunk.js": "/pokemon-code/static/js/2.692ea478.chunk.js",
+    "static/js/2.692ea478.chunk.js.map": "/pokemon-code/static/js/2.692ea478.chunk.js.map",
+    "static/js/3.c46fa89a.chunk.js": "/pokemon-code/static/js/3.c46fa89a.chunk.js",
+    "static/js/3.c46fa89a.chunk.js.map": "/pokemon-code/static/js/3.c46fa89a.chunk.js.map",
+    "index.html": "/pokemon-code/index.html",
+    "static/css/main.6b8eddbf.chunk.css.map": "/pokemon-code/static/css/main.6b8eddbf.chunk.css.map",
+    "static/js/2.692ea478.chunk.js.LICENSE.txt": "/pokemon-code/static/js/2.692ea478.chunk.js.LICENSE.txt",
+    "static/media/Spinner-1s-200px.9945c37d.svg": "/pokemon-code/static/media/Spinner-1s-200px.9945c37d.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.69e94c93.js",
+    "static/js/runtime-main.9f783173.js",
     "static/js/2.692ea478.chunk.js",
     "static/css/main.6b8eddbf.chunk.css",
-    "static/js/main.f773de6c.chunk.js"
+    "static/js/main.ffb2720d.chunk.js"
   ]
 }
