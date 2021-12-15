@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/codeApp/static/css/main.6b8eddbf.chunk.css",
+    "main.js": "/codeApp/static/js/main.f773de6c.chunk.js",
+    "main.js.map": "/codeApp/static/js/main.f773de6c.chunk.js.map",
+    "runtime-main.js": "/codeApp/static/js/runtime-main.69e94c93.js",
+    "runtime-main.js.map": "/codeApp/static/js/runtime-main.69e94c93.js.map",
+    "static/js/2.692ea478.chunk.js": "/codeApp/static/js/2.692ea478.chunk.js",
+    "static/js/2.692ea478.chunk.js.map": "/codeApp/static/js/2.692ea478.chunk.js.map",
+    "static/js/3.c46fa89a.chunk.js": "/codeApp/static/js/3.c46fa89a.chunk.js",
+    "static/js/3.c46fa89a.chunk.js.map": "/codeApp/static/js/3.c46fa89a.chunk.js.map",
+    "index.html": "/codeApp/index.html",
+    "static/css/main.6b8eddbf.chunk.css.map": "/codeApp/static/css/main.6b8eddbf.chunk.css.map",
+    "static/js/2.692ea478.chunk.js.LICENSE.txt": "/codeApp/static/js/2.692ea478.chunk.js.LICENSE.txt",
+    "static/media/Spinner-1s-200px.9945c37d.svg": "/codeApp/static/media/Spinner-1s-200px.9945c37d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.69e94c93.js",
+    "static/js/2.692ea478.chunk.js",
+    "static/css/main.6b8eddbf.chunk.css",
+    "static/js/main.f773de6c.chunk.js"
+  ]
+}
